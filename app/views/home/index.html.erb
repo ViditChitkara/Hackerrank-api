@@ -1,0 +1,10 @@
+<%= form_tag '/evaluate',remote: true do %>
+
+	<%= text_area_tag 'source'%>
+	<%= text_area_tag 'testcases'%>
+	<%= select_tag 'lang', options_for_select(@names.collect{ |key,value| [value, @codes[key]] }) %>
+	<%= select_tag 'format', options_for_select(["JSON","XML"]) %>
+	<%= hidden_field_tag 'api_key','hackerrank|1127787-1578|ed5429cbb9d7dad62d8c63737101ce0a090f8ad5' %>
+	<%= submit_tag 'Submit' %>
+
+<% end %>
